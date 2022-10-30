@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+    <body>
+        <div id="div_container">
+            <div id="div_fruit_list">
+                <p class="center f30">编辑库存信息</p>
+                <form th:action="@{/update.do}" method="post">
+                    <table id="tbl_fruit" th:object="${fruit}">
+                       <!-- <tr>
+                            <td><input type="hidden" name="fId" th:value=*{fId}></td>
+                        </tr>-->
+                        <!--隐藏域 功能类似于文本框 它的值会随着表单发送给服务器 但是不会显示在页面上-->
+                        <input type="hidden" name="fId" th:value="*{fId}">
+                        <tr>
+                            <th class="w20">名称 : </th>
+                            <!--获取请求域的对象-->
+                            <td><input type="text" name="fName" th:value="*{fName}"/></td>
+                            <!--<td><input type="text" name="fName" th:value="${fruit.fName}"/></td>-->
+                        <tr/>
+                        <tr>
+                            <th class="w20">单价 : </th>
+                            <td><input type="text" name="fPrice" th:value="*{fPrice}"/></td>
+                            <!--<td><input type="text" name="fPrice" th:value="${fruit.fPrice}"/></td>-->
+                        </tr>
+                        <tr>
+                            <th class="w20">库存 : </th>
+                            <td><input type="text" name="fCount" th:value="*{fCount}" /></td>
+                            <!--<td><input type="text" name="fCount" th:value="${fruit.fCount}" /></td>-->
+                        </tr>
+                        <tr>
+                            <th class="w20">备注 : </th>
+                            <td><input type="text" name="remark" th:value="*{remark}"/></td>
+                            <!--<td><input type="text" name="remark" th:value="${fruit.remark}"/></td>-->
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="修改"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

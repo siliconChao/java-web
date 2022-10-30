@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/add.css">
+</head>
+<body>
+<div id="div_container">
+    <div id="div_fruit_list">
+        <p class="center f30">添加库存1</p>
+        <!-- <form th:action="@{/add.do}" method="post">-->
+        <form action="add.do" method="post">
+            <table id="tbl_fruit">
+                <tr>
+                    <th class="w20">名称 :</th>
+                    <!--获取请求域的对象-->
+                    <td><input type="text" name="fName"/></td>
+                    <!--<td><input type="text" name="fName" th:value="${fruit.fName}"/></td>-->
+                <tr/>
+                <tr>
+                    <th class="w20">单价 :</th>
+                    <td><input type="text" name="fPrice"/></td>
+                    <!--<td><input type="text" name="fPrice" th:value="${fruit.fPrice}"/></td>-->
+                </tr>
+                <tr>
+                    <th class="w20">库存 :</th>
+                    <td><input type="text" name="fCount"/></td>
+                    <!--<td><input type="text" name="fCount" th:value="${fruit.fCount}" /></td>-->
+                </tr>
+                <tr>
+                    <th class="w20">备注 :</th>
+                    <td><input type="text" name="remark" th:value="*{remark}"/></td>
+                    <!--<td><input type="text" name="remark" th:value="${fruit.remark}"/></td>-->
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="添加"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
